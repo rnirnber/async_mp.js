@@ -11,22 +11,55 @@ What does async_mp.js do?
 Assumptions
 -----------
 async_mp.js currently supports the following code signatures:
-* $.get(url).done(function(response) {//do something with 'response'});
 
-* $.get(url, function(response) {//do something with 'response'});
-
-* $.post(url, {foo: "bar"}).done(function(response) {//do something with 'response'});
-
-* $.post(url, {foo: bar"}, function(response) {//do something with 'response'});
+<pre>
+	$.get(url).done(function(response)
+	{
+		//do something with 'response'
+	});
+</pre>
+<pre>
+	$.get(url, function(response)
+	{
+		//do something with 'response'
+	});
+</pre>
+<pre>
+	$.post(url, {foo: "bar"}).done(function(response)
+	{
+		//do something with 'response'}
+	);
+</pre>
+<pre>
+	$.post(url, {foo: bar"}, function(response)
+	{
+		//do something with 'response'}
+	);
+</pre>
 
 How do I use it?
 ----------------
 
-Include the script, and--before the include--define at top level (window) two Fns:
+Include the script, and define at top level (window) two Fns:
 
    begin_async_op
 	
    end_async_op
+
+Ex:
+
+<pre>
+	function begin_async_op()
+	{
+		$("#loading_div").css("display", "block");
+	}
+	function end_async_op()
+	{
+		#("#loading_div").css("display", "none");
+	}
+</pre>
+
+After jQuery has finished loading , call async_mp() to get the patched versions of $.post and $.get.
 	
 What about onError(), promise(), etc? I noticed async_mp.js doesn't handle those
 --------------------------------------------------------------------------------
