@@ -11,10 +11,10 @@ What does async_mp.js do?
 Assumptions
 -----------
 async_mp.js currently supports the following code signatures:
-   * $.get(url).done(function(response) {//do something with 'response'});
-	* $.get(url, function(response) {//do something with 'response'});
-	* $.post(url, {foo: "bar"}).done(function(response) {//do something with 'response'});
-	* $.post(url, {foo: bar"}, function(response) {//do something with 'response'});
+* $.get(url).done(function(response) {//do something with 'response'});
+* $.get(url, function(response) {//do something with 'response'});
+* $.post(url, {foo: "bar"}).done(function(response) {//do something with 'response'});
+* $.post(url, {foo: bar"}, function(response) {//do something with 'response'});
 
 How do I use it?
 ----------------
