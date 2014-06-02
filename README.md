@@ -5,7 +5,7 @@ A useful monkey patch for jQuery's $.post and $.get operations.
 
 What does async_mp.js do?
 -------------------------
-* Calls a user-defined Fn when an async operation has started.
+* Calls a user-defined Fn when an async operation has started and completed.
 * Makes dev life somewhat saner...
 
 Assumptions
