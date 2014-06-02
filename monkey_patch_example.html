@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Monkey Patching</title>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="./async_mp.js"></script>
+			<script type='text/javascript'>
+				var begin_async_op = function()
+				{
+					$("<p>Loading...</p>").appendTo($("body"));
+					$("button").detach();
+				};
+				var end_async_op = function()
+				{
+					$("body p").eq(0).text("Finished loading...");
+					setTimeout(function()
+					{
+						$("body p").detach();
+						$("<button type='button'>Test patch</button>").click(function()
+						{
+							test();
+						}).appendTo($("body"));
+					}, 3000);
+				};
+			</script>
+			<script type='text/javascript'>
+				
+			</script>
+			<script type='text/javascript'>
+				$(document).ready(function()
+				{
+					async_mp();
+					$("<button type='button'>Test patch</button>").click(function()
+					{
+						test();
+					}).appendTo($("body"));
+				});
+				function test()
+				{
+					$.get("http://raymondnirnberger.com/Code/page.php").done(function(response)
+					{
+						window.alert("Response was: =>\n" + response);
+					});
+				}
+			</script>
+		</head>
+		<body>
+			
+		</body>
+	</html>

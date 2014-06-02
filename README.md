@@ -40,7 +40,7 @@ async_mp.js currently supports the following code signatures:
 How do I use it?
 ----------------
 
-Include the script, and define at top level (window) two Fns:
+Include the script **AFTER** jQuery, and define at top level (window) two Fns:
 
    begin_async_op
 	
